@@ -1,5 +1,4 @@
 // Importação
-const {init} = require('./helpers/handlebars');
 const express = require('express');
 
 // Definindo variaveis pardrão
@@ -7,7 +6,7 @@ const app = express();
 
 
 // Definido minha view egine
-init(app);
+app.set('view engine', 'ejs');
 
 //  Rota padrão 
 app.use('/', require('./routes/home'));

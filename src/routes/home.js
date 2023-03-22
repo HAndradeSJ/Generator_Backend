@@ -1,16 +1,17 @@
 // Importação 
 const { Router } = require('express');
 const express = require('express');
+const { useInflection } = require('sequelize');
 const router = express.Router();
 
 // importação do controllers
-const form = require('../controllers/form');
-
+const Usecontrollers = require('../controllers/form')
+const usecontrollers = new Usecontrollers;
 
 // Rota Home
-router.get('/',form.formns);
-router.post('/formulario',form.criar);
+router.get('/',usecontrollers.renderhome());
+
 
 
 // exportando o mildeware
-module.exports = Router
+module.exports = router
