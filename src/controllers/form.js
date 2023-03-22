@@ -12,7 +12,7 @@ class Home {
 
    //controller para criar documento
    criardocumento(params) {
-    console.log('pegando')
+  
     return (req,res)=> {
         
     }
