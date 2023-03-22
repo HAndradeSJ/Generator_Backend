@@ -1,12 +1,13 @@
 // Importação
 const express = require('express');
 
+
 // Definindo variaveis pardrão
 const app = express();
 
-
 // Definido minha view egine
-app.set('view engine', 'ejs');
+
+
 
 //  Rota padrão 
 app.use('/', require('./routes/home'));

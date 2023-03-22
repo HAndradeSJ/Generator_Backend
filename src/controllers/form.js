@@ -1,13 +1,23 @@
-
+const path = require('path');
+const location = path.join(__dirname + '../views');
 // Defindo a class do meus controllers
 class Home {
     
     // controller para renderizar a home
     renderhome(params) {
         return (req,res)=> {
-            res.render('../views/home.ejs');
+            res.sendfile(location +"home.html");
         }
    } 
+
+   //controller para criar documento
+   criardocumento(params) {
+    console.log('pegando')
+    return (req,res)=> {
+        
+    }
+   }
+
         
     
    
