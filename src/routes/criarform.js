@@ -7,7 +7,7 @@ const usecontrollers = new Usecontrollers;
 
 
 // Rota Home
-router.get('/formulairo',usecontrollers.criardocumento());
+router.post('/formulairo',usecontrollers.criardocumento());
 
 
 // exportando o mildeware
