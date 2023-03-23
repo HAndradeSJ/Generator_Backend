@@ -13,7 +13,13 @@ router.get('/',usecontrollers.renderhome());
 
 // rotas dos modelos
 router.get('/modelo1',usecontrollers.modelo1());
+router.get('/modelo2',usecontrollers.modelo2());
+router.get('/modelo3',usecontrollers.modelo3());
+
+// rotas de criação de modelos
 router.post('/criarmodelo1',usecontrollers.criarmodelo1());
+router.post('/criarmodelo2',usecontrollers.criarmodelo2());
+router.post('/criarmodelo3',usecontrollers.criarmodelo3());
 
 
 // exportando o mildeware
