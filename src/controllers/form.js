@@ -1,4 +1,4 @@
-
+ const criardocumentos = require('../services/criardocuemento.services');
 // Defindo a class do meus controllers
 class Home {
     
@@ -28,7 +28,8 @@ class Home {
    // controller de criar documento
    criarmodelo1(params){
     return (req,res)=> {
-        res.send('rota post acessada com sucesso');
+        // chamando a função do sevices
+        res.criardocumentos.excute();
     }
    }
    criarmodelo2(params){

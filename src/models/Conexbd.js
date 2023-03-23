@@ -10,7 +10,7 @@ const sequelize = new Sequelize('testehenrique','root','1234',{
 
 // promise para validar a conexação
 sequelize.authenticate().then(result => res.status(200).send(result))
-.catch(err => res.status(500).send(err));
+.catch(err => res.status(500));
 
 
 // exportação da constante do banco de dados
