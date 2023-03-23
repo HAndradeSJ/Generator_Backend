@@ -18,7 +18,7 @@ app.engine( 'hbs', exphbs.engine( {
     
 }));
 
-app.use('./assets', express.static(__dirname +'/assets'));
+app.use('/assets', express.static(__dirname +'/assets'));
 
 //  Rota padrão 
 app.use('/', require('./routes/home'));
