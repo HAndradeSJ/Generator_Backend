@@ -1,4 +1,5 @@
- const criardocumentos = require('../services/criardocuemento.services');
+const Usarservices = require('../services/criardocuemento.services');
+const usarservices = new Usarservices();
 // Defindo a class do meus controllers
 class Home {
     
@@ -29,7 +30,7 @@ class Home {
    criarmodelo1(params){
     return (req,res)=> {
         // chamando a função do sevices
-        res.criardocumentos.excute();
+        usarservices.criarmodelo1();
     }
    }
    criarmodelo2(params){

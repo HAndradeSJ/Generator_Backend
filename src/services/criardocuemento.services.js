@@ -1,10 +1,15 @@
+
 //  Importação
  const documento = require('../models/documentos');
-    exports.module = function criardocumentos(response,request){
+    class geratordocumentos{
+      criarmodelo1(){
+         return console.log('criarmodelo1');
+      }
+   }
         
     // inserindo dados na tabela documentos
-    return  console.log('services pegando com sucesso !!!')
- }
+    
+ 
 
 
 
@@ -18,3 +23,4 @@
 // }).then(result => res.status(200).send(result))
 // .catch(err => res.status(500).send(err))
 // //
+module.exports = geratordocumentos;
