@@ -1,0 +1,35 @@
+body {
+    margin: 0;
+    padding: 0;
+    margin-top:5vh;
+}
+h1{
+  text-align:center;
+}
+.box{
+    margin-top:15vh;
+    padding: 10px;
+    display:flex;
+    justify-content:space-evenly;
+}
+.img1{
+    width:12vw;
+    height:30vh;
+}
+.img2{
+    width:12vw;
+    height:30vh;
+}
+.img3{
+    width:12vw;
+    height:30vh;
+}
+.card-body{
+    text-align:center;
+}
+.card{
+  -webkit-box-shadow: 11px 11px 27px -9px rgba(0,0,0,0.75);
+  -moz-box-shadow: 11px 11px 27px -9px rgba(0,0,0,0.75);
+  box-shadow: 11px 11px 27px -9px rgba(0,0,0,0.75);
+
+}
