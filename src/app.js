@@ -22,7 +22,7 @@ app.use('/assets', express.static(__dirname +'/assets'));
 
 //  Rota padrão 
 app.use('/', require('./routes/home'));
-app.use('/formulario',require('./routes/criarform'))
+app.use('/formulario',require('./routes/home'))
 
 // Definindo Porta 
 const port = 3000;

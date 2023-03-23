@@ -11,6 +11,9 @@ const usecontrollers = new Usecontrollers;
 // Rota Home
 router.get('/',usecontrollers.renderhome());
 
+// rotas dos modelos
+router.get('/modelo1',usecontrollers.modelo1());
+router.post('/criarmodelo1',usecontrollers.criarmodelo1());
 
 
 // exportando o mildeware
