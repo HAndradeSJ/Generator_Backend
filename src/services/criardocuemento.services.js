@@ -1,6 +1,6 @@
 //  Importação
  const documento = require('../models/documentos');
- async function criardocumento(response,request){
+ async function criardocumentos(response,request){
         
     // inserindo dados na tabela documentos
     return (
@@ -17,4 +17,4 @@
 
 
 
-export default {criardocumento};
+export default criardocumentos;
