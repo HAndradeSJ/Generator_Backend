@@ -1,7 +1,6 @@
 // importação
 const Sequelize = require('sequelize');
-const db = require('./Conexbd');
- 
+const db = require('./Conexbd'); 
 // Definido a tabela
 const documentos = db.define('documentos',{
     id_documento:{
@@ -24,7 +23,6 @@ const documentos = db.define('documentos',{
     }
 
 })
-// Codigo para ver se minha tabela do vs tá diferente da do banco 
-db.sync({alter:true});
+
 
 module.exports = documentos;
