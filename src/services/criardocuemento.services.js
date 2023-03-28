@@ -1,6 +1,6 @@
 
 //  Importação
- const documento = require('../models/documentos');
+//  const documento = require('../models/documentos');
  const htmlDocx= require('html-docx-js');
     class geratordocumentos{
       criarmodelo1(){

@@ -1,7 +1,7 @@
 // Importação
 const express = require('express');
 const exphbs = require('express-handlebars')
-const db = require('./models/Conexbd');
+// const db = require('./models/Conexbd');
 
 // Definindo variaveis pardrão
 const app = express();
@@ -28,7 +28,7 @@ app.use('/formulario',require('./routes/home'))
 // db.sync({alter:true});
 
 // Definindo Porta 
-const port = 8080;
+const port = 8081;
 app.listen(port,()=>{
     console.log(`servidor rondando na porta ${port}`);
 })
