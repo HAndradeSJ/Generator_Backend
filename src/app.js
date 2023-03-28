@@ -25,7 +25,7 @@ app.use('/', require('./routes/home'));
 app.use('/formulario',require('./routes/home'))
 
 // Codigo para ver se minha tabela do vs tá diferente da do banco 
-db.sync({alter:true});
+// db.sync({alter:true});
 
 // Definindo Porta 
 const port = 8080;

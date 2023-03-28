@@ -8,7 +8,7 @@ var sequelize = new Sequelize(
     "1234",
     {
         host: "0.0.0.0",
-        dialect: "sqlite",
+        dialect: "mysql",
         pool: {
             max: 5,
             min: 0,
