@@ -1,7 +1,6 @@
 // Importação
 const { Router } = require("express");
 const express = require("express");
-const { useInflection } = require("sequelize");
 const router = express.Router();
 
 // importação do controllers
@@ -21,7 +20,7 @@ router.post("/criarmodelo1", usecontrollers.criarmodelo1());
 router.post("/criarmodelo2", usecontrollers.criarmodelo2());
 router.post("/criarmodelo3", usecontrollers.criarmodelo3());
 
-router.get("/testes", usecontrollers.testes());
+
 
 // exportando o mildeware
 module.exports = router;

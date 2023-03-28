@@ -1,8 +1,9 @@
+// Importando minhas class e metodos derivados 
 const Usarservices = require("../services/criardocuemento.services");
 const usarservices = new Usarservices();
-
 const DocumentosRepository = require("../infra/repository/documentosRepository");
 const documentosRepository = new DocumentosRepository();
+
 // Defindo a class do meus controllers
 class Home {
   // controller para renderizar a home
@@ -31,6 +32,7 @@ class Home {
   // controller de criar documento
   criarmodelo1(params) {
     return (req, res) => {
+    
       // chamando a função do sevices
       usarservices.criarmodelo1();
     };
@@ -46,23 +48,24 @@ class Home {
     };
   }
 
-  testes() {
-    return (req, res) => {
-      documentosRepository
-        .gerarNumero()
-        .then((response) => {
-          if (response.error) {
-            res.status(response.code).send({ error: response.error });
-          } else {
-            return res.status(200).send({ response });
-          }
-        })
-        .catch((error) => {
-          throw new Error(console.log(error));
-        });
-    };
-  }
 }
+    //   testes() {
+    //     return (req, res) => {
+    //       documentosRepository
+    //         .gerarNumero()
+    //         .then((response) => {
+    //           if (response.error) {
+    //             res.status(response.code).send({ error: response.error });
+    //           } else {
+    //             return res.status(200).send({ response });
+    //           }
+    //         })
+    //         .catch((error) => {
+    //           throw new Error(console.log(error));
+    //         });
+    //     };
+    //   }
+// 
 
 // exportando a class do meus controllers
 module.exports = Home;

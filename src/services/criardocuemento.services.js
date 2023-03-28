@@ -1,9 +1,9 @@
 
 //  Importação
-//  const documento = require('../models/documentos');
+
  const htmlDocx= require('html-docx-js');
     class geratordocumentos{
-      criarmodelo1(){
+      criarmodelo1(req,res){
         var  pretitulo = req.body.titulo
         var  namearquivo = req.body.nomearquivo
         var  pretextarea = req.body.desc
