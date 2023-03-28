@@ -1,10 +1,13 @@
+// Importando o banco de dados
 const db = require("../db/db");
 
+// criando um class para inserir documentos
 class documentosRepository {
   constructor() {
     this.db = db;
   }
 
+  // função para gerar o numero identifador do documento 
   gerarNumero() {
     return new Promise((resolve, reject) => {
       const { numero } = this.db.query(
@@ -17,6 +20,7 @@ class documentosRepository {
       );
 
       try {
+        // função de fazer um auto incremento no id
         this.db.query(
           `INSERT INTO documentos (num_doc) values (?)`,
           [numero + 1],
@@ -27,17 +31,20 @@ class documentosRepository {
               [],
               async (error, response) => {
                 if (error) return reject(error);
-                return resolve(response[0]);
+                return resolve(response[0]); 
+                // pegar isso e colocar como identificador
               }
             );
           }
         );
+        // para verificar o erro 
       } catch (error) {
         return reject(new Error(error));
       }
     });
   }
 
+  // inserindo dados no banco, do modeloq
   criaModelo1(data) {
     return new Promise((resolve, reject) => {
       try {
@@ -50,6 +57,7 @@ class documentosRepository {
             data.usuario,
             data.descricao,
           ],
+          // Acusando o erro
           async (error, response) => async (error, response) => {
             if (error) return reject(error);
             return resolve({success: "Modelo criado com sucesso"});
@@ -61,5 +69,5 @@ class documentosRepository {
     });
   }
 }
-
+// exportação do repository 
 module.exports = documentosRepository;

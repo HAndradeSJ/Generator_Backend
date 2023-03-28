@@ -1,8 +1,9 @@
 
 //  Importação
-
- const htmlDocx= require('html-docx-js');
-    class geratordocumentos{
+const http = require('http');
+const htmlDocx= require('html-docx-js');
+const fs = require('fs');
+    class geratordocumentos {
       criarmodelo1(req,res){
         var  pretitulo = req.body.titulo
         var  namearquivo = req.body.nomearquivo
@@ -28,7 +29,15 @@
         res.setHeader('Content-Type', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
         res.setHeader('Content-Disposition', `attachment; filename=${ sluggify(namearquivo) }.docx`);
         res.setHeader('Content-Length', docx.length);
-        res.send(docx);
+        (url,docx,req)=>{
+                  const file = fs.createWriteStream(docx);
+                  http.get(url, function(response) {
+                    response.pipe(file);
+                    file.on('finish', function() {
+                      file.close(); 
+                    })
+                  })
+        }
 
       }
     
