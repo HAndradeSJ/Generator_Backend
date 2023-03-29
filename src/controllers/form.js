@@ -30,11 +30,11 @@ class Home {
   }
 
   // controller de criar documento
-  criarmodelo1(params) {
+  criarmodelo1(req,res) {
     return (req, res) => {
     
       // chamando a função do sevices
-      usarservices.criarmodelo1();
+      usarservices.criarmodelo1(req,res);
     };
   }
   criarmodelo2(params) {

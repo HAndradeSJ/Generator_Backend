@@ -1,10 +1,15 @@
 // Importação
 const express = require('express');
-const exphbs = require('express-handlebars')
-// const db = require('./models/Conexbd');
+const exphbs = require('express-handlebars');
+const bodyParser = require('body-parser');
 
 // Definindo variaveis pardrão
 const app = express();
+
+// Configurando bodyParser
+app.use(bodyParser.urlencoded({extended:true}));
+app.use(bodyParser.json());
+
 
 // Definido minha view egine
 app.set('view engine', 'hbs');
