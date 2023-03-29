@@ -15,17 +15,24 @@ class Home {
   //controller para renderizar modelo
   modelo1(params) {
     return (req, res) => {
-      res.render("modelo1", { title: "Modelo1", style: "modelo1.css" });
+      documentosRepository.gerarNumero().then((num_doc) => {
+        res.render("modelo1", { title: "Modelo1", style: "modelo1.css", numero_doc:"#001/23"});
+      })
+      
     };
   }
   modelo2(params) {
     return (req, res) => {
-      res.render("modelo2", { title: "Modelo2", style: "modelo2.css" });
+      documentosRepository.gerarNumero().then((num_doc) => {
+        res.render("modelo2", { title: "Modelo2", style: "modelo2.css", numero_doc:"#002/23"});
+      })
     };
   }
   modelo3(params) {
     return (req, res) => {
-      res.render("modelo3", { title: "Modelo3", style: "modelo3.css" });
+      documentosRepository.gerarNumero().then((num_doc) => {
+        res.render("modelo3", { title: "Modelo3", style: "modelo3.css", numero_doc:"#003/23"});
+      })
     };
   }
 
@@ -33,7 +40,6 @@ class Home {
   criarmodelo1(req,res) {
     return (req, res) => {
     
-      // chamando a função do sevices
       usarservices.criarmodelo1(req,res);
     };
   }

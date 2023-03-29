@@ -15,7 +15,7 @@ body {
 .form-group {
     display: flex;
     flex-direction:column;
-    margin-top:6vh;
+    margin-top:4vh;
 }
 h1{
     text-align:center;
@@ -31,4 +31,8 @@ h1{
 }
 textarea{
     width:60vh;
+}
+p{
+    font-weight:bold;
+    margin-top:10px;
 }
