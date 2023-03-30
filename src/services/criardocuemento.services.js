@@ -13,35 +13,36 @@ const fs = require('fs');
         var  itemlista = req.body.itemlista;
 
         // Genrando a lista
-        var semilista = '/n'
+        var semilista = '\n'
         var contador = 1
         while (contador <=itemlista){
-          semilista = semilista + 'item'+'/n'
+          semilista = semilista + 'item da lista'+'\n'
           contador = contador + 1
         }
-        var plista = semilista + '/n'
+        var plista = semilista +'\n'
         // Criando documetno do word em branco
-        let  documento  = officegen('documento');
+        let  documento  = officegen('docx');
 
         // Colocando os dados dentro do documento em branco
         var titulo = documento.createP({align:'center'});
           // estilizando a o elemento
           titulo.addText(pretitulo,{
             border:'solid',
-            borderSize: 12,
-            borderColor:'88CFF'
+            borderSize:12,
+            borderColor:'88CFF',
+            font_size:35
           });
-
+        // estiliazando os componetes 
         var lista = documento.createP({align:'left'});
-        lista.addText(plista,{bold:true,underline:true});
+        lista.addText(plista,{font_size:17});
 
         var desc = documento.createP({align:'justify'});
-        desc.addText(pretextarea,{bold:true,underline:true});
+        desc.addText(pretextarea,{underline:false,font_size:18});
 
         // Nomeando o arquvio 
         res.writeHead(200,{
           "Content-Type": "application/vnd.openxmlformats-officedocument.documentml.document",
-          "Content-disposition":"attachment; filename = "+namearquivo
+          "Content-disposition":"attachment; filename = "+namearquivo+ '.doc'
         })
         // fazendo download do docsx
         documento.generate(res);
