@@ -1,6 +1,8 @@
 // Importando minhas class e metodos derivados 
-const Usarservices = require("../services/criardocuemento.services");
-const usarservices = new Usarservices();
+const Usarservices1 = require("../services/criardocuemento1.services");
+const usarservices1 = new Usarservices1();
+const Usarservices2 = require("../services/criardocumento2.services");
+const usarservices2 = new Usarservices2();
 const DocumentosRepository = require("../infra/repository/documentosRepository");
 const documentosRepository = new DocumentosRepository();
 
@@ -39,13 +41,12 @@ class Home {
   // controller de criar documento
   criarmodelo1(req,res) {
     return (req, res) => {
-    
-      usarservices.criarmodelo1(req,res);
+      usarservices1.criarmodelo1(req,res);
     };
   }
   criarmodelo2(params) {
     return (req, res) => {
-      res.send("rota post acessada com sucesso");
+      usarservices2.criarmodelo2(req,res);
     };
   }
   criarmodelo3(params) {

@@ -1,10 +1,8 @@
 
 //  Importação
-const https = require('http');
 const officegen = require('officegen');
-const fs = require('fs');
 
-    class geratordocumentos {
+    class geratordocumentos1 {
       criarmodelo1(req,res){
         // pegando os dados do corpo 
         var  pretitulo = req.body.titulo
@@ -51,4 +49,4 @@ const fs = require('fs');
 
  }
 
-module.exports = geratordocumentos;
+module.exports = geratordocumentos1;

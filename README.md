@@ -9,3 +9,8 @@ create table documentos (
     descricao char(100)
 );
 
+    DB_HOST= localhost
+    DB_USER= root
+    DB_PASS= 1234
+    DB_PORT= 3306
+    DB_NAME= generator_docxs
