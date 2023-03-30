@@ -40,13 +40,11 @@ const fs = require('fs');
 
         // Nomeando o arquvio 
         res.writeHead(200,{
-          "content-type": "application/vnd.openxmlformats-officedocument.documentml.document",
-          "content-disposition": "attachment; filename = " + namearquivo
+          "Content-Type": "application/vnd.openxmlformats-officedocument.documentml.document",
+          "Content-disposition":"attachment; filename = "+namearquivo
         })
         // fazendo download do docsx
         documento.generate(res);
-
-
       }
   
 
