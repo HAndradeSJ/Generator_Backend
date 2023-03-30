@@ -3,6 +3,8 @@ const Usarservices1 = require("../services/criardocuemento1.services");
 const usarservices1 = new Usarservices1();
 const Usarservices2 = require("../services/criardocumento2.services");
 const usarservices2 = new Usarservices2();
+const Usarservices3 = require("../services/criardocumento3.services");
+const usarservices3 = new Usarservices3();
 const DocumentosRepository = require("../infra/repository/documentosRepository");
 const documentosRepository = new DocumentosRepository();
 
@@ -44,14 +46,14 @@ class Home {
       usarservices1.criarmodelo1(req,res);
     };
   }
-  criarmodelo2(params) {
+  criarmodelo2(req,res) {
     return (req, res) => {
       usarservices2.criarmodelo2(req,res);
     };
   }
-  criarmodelo3(params) {
+  criarmodelo3(req,res) {
     return (req, res) => {
-      res.send("rota post acessada com sucesso");
+      usarservices3.criarmodelo3(req,res);
     };
   }
 
