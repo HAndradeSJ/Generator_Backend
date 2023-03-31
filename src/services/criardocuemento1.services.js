@@ -5,10 +5,10 @@ const officegen = require('officegen');
     class geratordocumentos1 {
       criarmodelo1(req,res){
         // pegando os dados do corpo 
-        var  pretitulo = req.body.titulo
+        var  pretitulo =   req.body.titulo
         var  namearquivo = req.body.nomearquivo
         var  pretextarea = req.body.desc
-        var  itemlista = req.body.itemlista;
+        var  itemlista =   req.body.itemlista;
 
         // Genrando a lista
         var semilista = '\n'

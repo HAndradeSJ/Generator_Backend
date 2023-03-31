@@ -1,4 +1,4 @@
-// Importando minhas class e metodos derivados 
+// Importando minhas class e metodos derivados
 const Usarservices1 = require("../services/criardocuemento1.services");
 const usarservices1 = new Usarservices1();
 const Usarservices2 = require("../services/criardocumento2.services");
@@ -6,6 +6,7 @@ const usarservices2 = new Usarservices2();
 const Usarservices3 = require("../services/criardocumento3.services");
 const usarservices3 = new Usarservices3();
 const DocumentosRepository = require("../infra/repository/documentosRepository");
+const { changeUser } = require("../infra/db/db");
 const documentosRepository = new DocumentosRepository();
 
 // Defindo a class do meus controllers
@@ -19,62 +20,79 @@ class Home {
   //controller para renderizar modelo
   modelo1(params) {
     return (req, res) => {
-      documentosRepository.gerarNumero().then((num_doc) => {
-        res.render("modelo1", { title: "Modelo1", style: "modelo1.css", numero_doc:"#001/23"});
-      })
-      
+      documentosRepository.gerarNumero().then((response) => {
+        res.render("modelo1", {
+          title: "Modelo1",
+          style: "modelo1.css",
+          numero_doc: `#00${response}/2023`,
+        });
+      });
     };
   }
   modelo2(params) {
     return (req, res) => {
-      documentosRepository.gerarNumero().then((num_doc) => {
-        res.render("modelo2", { title: "Modelo2", style: "modelo2.css", numero_doc:"#002/23"});
-      })
+      documentosRepository.gerarNumero().then((response) => {
+        res.render("modelo2", {
+          title: "Modelo2",
+          style: "modelo2.css",
+          numero_doc:`#00${response}/2023`,
+        });
+      });
     };
   }
   modelo3(params) {
     return (req, res) => {
-      documentosRepository.gerarNumero().then((num_doc) => {
-        res.render("modelo3", { title: "Modelo3", style: "modelo3.css", numero_doc:"#003/23"});
-      })
+      documentosRepository.gerarNumero().then((response) => {
+        res.render("modelo3", {
+          title: "Modelo3",
+          style: "modelo3.css",
+          numero_doc:`#00${response}/2023`,
+        });
+      });
     };
   }
 
   // controller de criar documento
-  criarmodelo1(req,res) {
+  criarmodelo1() {
     return (req, res) => {
-      usarservices1.criarmodelo1(req,res);
-    };
+
+      // pegando dados do formulario
+      const data = req.body;
+
+      // Cadastrando do banco database
+      documentosRepository.criaModelo(data)
+
+      // Chamando a função do word
+      usarservices1.criarmodelo1(req, res);
   }
-  criarmodelo2(req,res) {
+}
+  criarmodelo2(req, res) {
     return (req, res) => {
+       // pegando dados do formulario
+       const data = req.body;
+
+       // Cadastrando do banco database
+       documentosRepository.criaModelo(data)
+
+      // Chamando a funçao do word
       usarservices2.criarmodelo2(req,res);
     };
   }
-  criarmodelo3(req,res) {
+  criarmodelo3(req, res) {
     return (req, res) => {
-      usarservices3.criarmodelo3(req,res);
+       // pegando dados do formulario
+        const data = req.body;
+
+        // Cadastrando do banco database
+        documentosRepository.criaModelo(data)
+
+        // chamando a função do word
+        usarservices3.criarmodelo3(req,res);
+
     };
   }
-
 }
-    //   testes() {
-    //     return (req, res) => {
-    //       documentosRepository
-    //         .gerarNumero()
-    //         .then((response) => {
-    //           if (response.error) {
-    //             res.status(response.code).send({ error: response.error });
-    //           } else {
-    //             return res.status(200).send({ response });
-    //           }
-    //         })
-    //         .catch((error) => {
-    //           throw new Error(console.log(error));
-    //         });
-    //     };
-    //   }
-// 
+
 
 // exportando a class do meus controllers
 module.exports = Home;

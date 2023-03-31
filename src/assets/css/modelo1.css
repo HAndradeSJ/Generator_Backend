@@ -15,7 +15,7 @@ body {
 .form-group {
     display: flex;
     flex-direction:column;
-    margin-top:4vh;
+    margin-top:3vh;
 }
 h1{
     text-align:center;
@@ -35,4 +35,10 @@ textarea{
 p{
     font-weight:bold;
     margin-top:10px;
+}
+
+.numeral{
+    border:none;
+    font-weight:bold;
+    width:124px;
 }

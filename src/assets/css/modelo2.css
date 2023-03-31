@@ -40,3 +40,8 @@ p{
     font-weight:bold;
     margin-top:10px;
 }
+.numeral{
+    border:none;
+    font-weight:bold;
+    width:124px;
+}

@@ -7,9 +7,9 @@
             // pegando dados do formulario
             var  pretitulo   = req.body.titulo;
             var  namearquivo = req.body.nomearquivo;
-            var  pretextarea = req.body.texst;
+            var  pretextarea = req.body.texts;
             var  substitulo  = req.body.subtitulo;
-            var  texsubs     = req.body.textsubs
+            var  texsubs     = req.body.text2;
 
             // Criando documetno do word em branco
             let  documento  = officegen('docx');
@@ -32,7 +32,7 @@
                     border:'solid',
                     borderSize:12,
                     borderColor:'88CFF',
-                    font_size:20
+                    font_size:25
                     });
             var textosub = documento.createP({align:'justify'});
             textosub.addText(texsubs,{undefined:false,font_size:18});
