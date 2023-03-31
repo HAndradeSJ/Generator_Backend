@@ -14,3 +14,9 @@ create table documentos (
     DB_PASS= 1234
     DB_PORT= 3306
     DB_NAME= generator_docxs
+
+
+
+    duas metas : 
+    -> fazer a função do id dar certo
+    -> e fazer a função da tabela
