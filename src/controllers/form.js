@@ -60,10 +60,11 @@ class Home {
       const data = req.body;
 
       // Cadastrando do banco database
-      documentosRepository.criaModelo(data)
+      documentosRepository.criaModelo1(data)
 
       // Chamando a função do word
-      usarservices1.criarmodelo1(req, res);
+      usarservices1.criarmodelo1(req, res)
+        
   }
 }
   criarmodelo2(req, res) {
@@ -72,7 +73,7 @@ class Home {
        const data = req.body;
 
        // Cadastrando do banco database
-       documentosRepository.criaModelo(data)
+       documentosRepository.criaModelo2(data)
 
       // Chamando a funçao do word
       usarservices2.criarmodelo2(req,res);
@@ -84,7 +85,7 @@ class Home {
         const data = req.body;
 
         // Cadastrando do banco database
-        documentosRepository.criaModelo(data)
+        documentosRepository.criaModelo3(data)
 
         // chamando a função do word
         usarservices3.criarmodelo3(req,res);

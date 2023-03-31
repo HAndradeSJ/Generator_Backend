@@ -14,7 +14,7 @@ const officegen = require('officegen');
         var semilista = '\n'
         var contador = 1
         while (contador <=itemlista){
-          semilista = semilista + 'item da lista'+'\n'
+          semilista = semilista + 'Item da lista'+'\n'
           contador = contador + 1
         }
         var plista = semilista +'\n'

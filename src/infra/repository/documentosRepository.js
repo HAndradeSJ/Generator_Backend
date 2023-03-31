@@ -11,7 +11,7 @@ class documentosRepository {
   gerarNumero() {
     return new Promise((resolve, reject) => {
       this.db.query(
-        `SELECT num_doc FROM documentos ORDER BY id DESC`,
+        `SELECT num_doc FROM documentos ORDER BY id des`,
         [],
         async (error, response) => {
           if (error) return reject(error);
@@ -23,8 +23,8 @@ class documentosRepository {
     });
   }
 
-  // inserindo dados no banco, do modeloq
-  criaModelo(data) {
+  // inserindo dados no banco
+  criaModelo1(data) {
     return new Promise((resolve, reject) => {
       try {
         this.db.query(
@@ -39,10 +39,54 @@ class documentosRepository {
       } catch (error) {
         return reject(new Error(error));
       }
-    });
-
-    
+      
+      
+    })
   }
+    criaModelo2(data) {
+      return new Promise((resolve, reject) => {
+        try {
+          this.db.query(
+            `INSERT INTO documentos (num_doc, tipo_doc, data_hora, usuario, descricao) values (?,?,?,?,?)`,
+            [data.numero, "Modelo 2", new Date(), data.usuario, data.desc],
+            // Acusando o erro
+            async (error, response) => {
+              if (error) return reject(error);
+              return resolve({ success: "Modelo criado com sucesso" });
+            }
+          );
+        } catch (error) {
+          return reject(new Error(error));
+        }
+        
+        
+      })
+    }
+    criarmodelo3(data){
+      return new Promise((resolve, reject) => {
+        try {
+          this.db.query(
+            `INSERT INTO documentos (num_doc, tipo_doc, data_hora, usuario, descricao) values (?,?,?,?,?)`,
+            [data.numero, "Modelo 3", new Date(), data.usuario, data.desc],
+            // Acusando o erro
+            async (error, response) => {
+              if (error) return reject(error);
+              return resolve({ success: "Modelo criado com sucesso" });
+            }
+          );
+        } catch (error) {
+          return reject(new Error(error));
+        }
+        
+        
+      })
+       
+    }
+      
+    
+    
+    
+  
 }
 // exportação do repository
 module.exports = documentosRepository;
