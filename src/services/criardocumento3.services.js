@@ -4,7 +4,7 @@ const officegen = require('officegen');
 
 // Criando a Class 
     class criarmodelo3{
-      criarmodelo3(res,req){
+      criarmodelo3(req,res){
 
           // pegando dados do formulario
           var  pretitulo   = req.body.titulo;
