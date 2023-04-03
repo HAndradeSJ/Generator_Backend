@@ -38,6 +38,8 @@ const officegen = require('officegen');
 
              // fazendo download do docsx
              documento.generate(res);
+
+             
             
         }
           

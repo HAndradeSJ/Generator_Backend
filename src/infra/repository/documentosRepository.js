@@ -1,5 +1,13 @@
 // Importando o banco de dados
+const { parse } = require("path");
 const db = require("../db/db");
+
+
+
+// função para quando o numeral for 0
+function strzero(nr,n,str){
+  return Array(n-String(nr).length + 1).join(str || '0') +nr;
+}
 
 // criando um class para inserir documentos
 class documentosRepository {
@@ -11,12 +19,23 @@ class documentosRepository {
   gerarNumero() {
     return new Promise((resolve, reject) => {
       this.db.query(
-        `SELECT num_doc FROM documentos ORDER BY id des`,
+        `SELECT num_doc FROM documentos ORDER BY id DESC`,
         [],
         async (error, response) => {
-          if (error) return reject(error);
-          var num = response[0] ? parseInt(response[0].num_doc, 10) + 1 : 1;
-          return resolve(num);
+          var date = new Date()
+          var year = date.getFullYear();
+          if(error) return reject(error);
+          if(response.length == 0){
+            var num = strzero(0,5)
+          }
+          else{
+            var num = response[0].num_doc.split('/');
+            num = num[0]
+          }
+          var num = strzero(parseInt(num)+1,5);
+          num = "#"+ num + '/' + year;
+          console.log(num);
+          return resolve(num)
           
         }
       );

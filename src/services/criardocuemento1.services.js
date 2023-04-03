@@ -1,5 +1,7 @@
 
 //  Importação
+const { render } = require('ejs');
+const { request } = require('http');
 const officegen = require('officegen');
 
     class geratordocumentos1 {
@@ -43,7 +45,9 @@ const officegen = require('officegen');
           "Content-disposition":"attachment; filename = "+namearquivo+ '.doc'
         })
         // fazendo download do docsx
-        documento.generate(res);
+          documento.generate(res)
+         
+          
       }
   
 

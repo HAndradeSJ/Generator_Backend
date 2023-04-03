@@ -24,7 +24,7 @@ class Home {
         res.render("modelo1", {
           title: "Modelo1",
           style: "modelo1.css",
-          numero_doc: `#00${response}/2023`,
+          numero_doc:response,
         });
       });
     };
@@ -35,7 +35,7 @@ class Home {
         res.render("modelo2", {
           title: "Modelo2",
           style: "modelo2.css",
-          numero_doc:`#00${response}/2023`,
+          numero_doc:response,
         });
       });
     };
@@ -46,7 +46,7 @@ class Home {
         res.render("modelo3", {
           title: "Modelo3",
           style: "modelo3.css",
-          numero_doc:`#00${response}/2023`,
+          numero_doc:response,
         });
       });
     };
@@ -64,7 +64,8 @@ class Home {
 
       // Chamando a função do word
       usarservices1.criarmodelo1(req, res)
-        
+    
+          
   }
 }
   criarmodelo2(req, res) {
