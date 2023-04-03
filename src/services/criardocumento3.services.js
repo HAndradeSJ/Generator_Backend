@@ -2,47 +2,49 @@
 const { request } = require('http');
 const officegen = require('officegen');
 
-// Criando a Class
+// Criando a Class 
     class criarmodelo3{
       criarmodelo3(res,req){
-            // Pegando dado do formulario
-            var  pretitulo =   req.body.titulo;
-            var  pretextarea = req.body.text2;
-            var  namearquivo = req.body.nomearquivo;
-            var  colunavertical= req.body.colunavertical;
-            var  colunahorizontal= req.body.colunahorizontal;
 
-            // Criando documetno do word em branco
-            let  documento  = officegen('docx');
+          // pegando dados do formulario
+          var  pretitulo   = req.body.titulo;
+          var  namearquivo = req.body.nomearquivo;
+          var  pretextarea = req.body.texts;
+          var  colunavertical = req.body.colunavertical;
+          var  colunahorizontal = req.body.colunahorizontal;
 
-            // Colocando os dados dentro do documento em branco
-            var titulo = documento.createP({align:'center'});
-            // estilizando a o elemento
-                titulo.addText(pretitulo,{
-                border:'solid',
-                borderSize:12,
-                borderColor:'88CFF',
-                font_size:35
-                });
+          // Criando documetno do word em branco
+          let  documento  = officegen('docx');
 
-              var texto = documento.createP({align:'justify'});
-              texto.addText(pretextarea,{underline:false,font_size:18});
+          // Colocando os dados dentro do documento em branco
+          var titulo = documento.createP({align:'center'});
+              // estilizando a o elemento
+              titulo.addText(pretitulo,{
+              border:'solid',
+              borderSize:12,
+              borderColor:'88CFF',
+              font_size:35
+              });
+           var texto = documento.createP({align:'justify'});
 
-           
-            // Nomeando o arquvio 
-            res.writeHead(200,{
-            "Content-Type": "application/vnd.openxmlformats-officedocument.documentml.document",
-            "Content-disposition":"attachment; filename = "+namearquivo+ '.doc'
-            })
+           texto.addText(pretextarea,{underline:false,font_size:18});
 
-             // fazendo download do docsx
-             documento.generate(res);
-            
-        }
+          //  inserindo a tabela 
           
 
-    }
+        
+          // Nomeando o arquvio 
+          res.writeHead(200,{
+          "Content-Type": "application/vnd.openxmlformats-officedocument.documentml.document",
+          "Content-disposition":"attachment; filename = "+namearquivo+ '.doc'
+           })
 
+          // fazendo download do docsx
+           documento.generate(res);
+           
+      }
 
+        }
+        
 // exportando a class 
 module.exports = criarmodelo3;

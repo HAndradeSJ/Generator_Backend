@@ -80,7 +80,7 @@ class documentosRepository {
         
       })
     }
-    criarodelo3(data){
+    criarModelo3(data){
       return new Promise((resolve, reject) => {
         try {
           this.db.query(

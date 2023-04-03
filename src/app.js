@@ -15,7 +15,7 @@ app.use(bodyParser.json());
 app.set('view engine', 'hbs');
 app.set('views', __dirname + '/views');
 
-app.engine( 'hbs', exphbs.engine( {
+app.engine( 'hbs', exphbs.engine({
     extname: '.hbs',
     defaultView: 'main',
     layoutsDir: __dirname + '/views/layouts/',
