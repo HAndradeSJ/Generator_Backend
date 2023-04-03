@@ -32,9 +32,8 @@ class documentosRepository {
             var num = response[0].num_doc.split('/');
             num = num[0]
           }
-          var num = strzero(parseInt(num)+1,5);
-          num = "#"+ num + '/' + year;
-          console.log(num);
+          var num = strzero(parseInt(num)+1,3);
+          num =  num + '/' + year;
           return resolve(num)
           
         }
@@ -81,7 +80,7 @@ class documentosRepository {
         
       })
     }
-    criarmodelo3(data){
+    criarodelo3(data){
       return new Promise((resolve, reject) => {
         try {
           this.db.query(

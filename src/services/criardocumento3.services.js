@@ -1,15 +1,16 @@
 //  Importação
+const { request } = require('http');
 const officegen = require('officegen');
 
 // Criando a Class
-    class geratordocumentos3{
-        criamodelo3(res,req){
+    class criarmodelo3{
+      criarmodelo3(res,req){
             // Pegando dado do formulario
-            var  pretitulo =        req.body.titulo;
-            var  pretextarea =      req.body.text2;
-            var  namearquivo =      req.body.nomearquivo;
-            var  colunavertical=    req.body.columnvertical;
-            var  colunahorizontal = req.body.columnhorizontal;
+            var  pretitulo =   req.body.titulo;
+            var  pretextarea = req.body.text2;
+            var  namearquivo = req.body.nomearquivo;
+            var  colunavertical= req.body.colunavertical;
+            var  colunahorizontal= req.body.colunahorizontal;
 
             // Criando documetno do word em branco
             let  documento  = officegen('docx');
@@ -24,12 +25,10 @@ const officegen = require('officegen');
                 font_size:35
                 });
 
-            var texto = documento.createP({align:'justify'});
-            texto.addText(pretextarea,{underline:false,font_size:18});
+              var texto = documento.createP({align:'justify'});
+              texto.addText(pretextarea,{underline:false,font_size:18});
 
-
-
-                
+           
             // Nomeando o arquvio 
             res.writeHead(200,{
             "Content-Type": "application/vnd.openxmlformats-officedocument.documentml.document",
@@ -38,8 +37,6 @@ const officegen = require('officegen');
 
              // fazendo download do docsx
              documento.generate(res);
-
-             
             
         }
           
@@ -48,4 +45,4 @@ const officegen = require('officegen');
 
 
 // exportando a class 
-module.exports = geratordocumentos3;
+module.exports = criarmodelo3;

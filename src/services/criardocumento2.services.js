@@ -46,6 +46,7 @@
 
             // fazendo download do docsx
              documento.generate(res);
+             
         }
 
     }

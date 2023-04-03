@@ -86,7 +86,7 @@ class Home {
         const data = req.body;
 
         // Cadastrando do banco database
-        documentosRepository.criaModelo3(data)
+        documentosRepository.criarModelo3(data)
 
         // chamando a função do word
         usarservices3.criarmodelo3(req,res);
