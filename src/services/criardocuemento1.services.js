@@ -1,7 +1,5 @@
 
 //  Importação
-const { render } = require('ejs');
-const { request } = require('http');
 const officegen = require('officegen');
 
     class geratordocumentos1 {

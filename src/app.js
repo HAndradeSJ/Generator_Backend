@@ -2,9 +2,11 @@
 const express = require('express');
 const exphbs = require('express-handlebars');
 const bodyParser = require('body-parser');
+const cors = require("cors");
 
 // Definindo variaveis pardrão
 const app = express();
+app.use(cors());
 
 // Configurando bodyParser
 app.use(bodyParser.urlencoded({extended:true}));
