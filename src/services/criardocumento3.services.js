@@ -27,76 +27,75 @@ const officegen = require('officegen');
            var texto = documento.createP({align:'justify'});
 
            texto.addText(pretextarea,{underline:false,font_size:18});
-
-          //  inserindo a tabela
+        
           var table = [
             [{
-              val: "No.",
+              val:`${colunahorizontal}`,
               opts: {
-                cellColWidth:200,
+                cellColWidth:400,
+                color:"white",
+                align: "center",
+                backgroundColor:"black",
                 b:true,
-                sz: '48',
-                spacingBefore: 120,
-                spacingAfter: 120,
-                spacingLine: 240,
-                spacingLineRule: 'atLeast',
+                sz: '30',
                 shd: {
-                  fill: "7F7F7F",
+                  fill: "black",
                   themeFill: "text1",
-                  "themeFillTint": "80"
+                  "themeFillTint": "100"
                 },
                 fontFamily: "Avenir Book"
               }
             },{
-              val: "Title1",
+              val:`${colunahorizontal}`,
               opts: {
                 b:true,
-                color: "A00000",
-                align: "right",
+                color: "white",
+                sz:'30',
+                cellColWidth:400,
+                backgroundColor:"black",
+                align: "center",
                 shd: {
-                  fill: "92CDDC",
+                  fill: "black",
                   themeFill: "text1",
-                  "themeFillTint": "80"
-                }
+                  "themeFillTint": "100"  
+                },
+                fontFamily: "Avenir Book"
               }
             },{
-              val: "Title2",
+              val:`${colunahorizontal}`,
               opts: {
+                color:"white",
                 align: "center",
-                vAlign: "center",
-                cellColWidth: 42,
+                cellColWidth:300,
+                backgroundColor:"black",
                 b:true,
-                sz: '48',
+                sz: '30',
                 shd: {
-                  fill: "92CDDC",
+                  fill: "black",
                   themeFill: "text1",
-                  "themeFillTint": "80"
-                }
+                  "themeFillTint": "100"
+                },
+                fontFamily: "Avenir Book"
               }
             }],
-            [1,``],
-            [3,``],
-            [4,``],
-            [5,``],
-            [6,``],
-            [7,``],
+            [`${colunavertical}`],
+            [`${colunavertical}`],
+            [`${colunavertical}`],
+            [`${colunavertical}`],
+            
           ]
           
           var tableStyle = {
-            tableColWidth: 200,
-            tableSize: 30,
-            tableColor: "ada",
-            tableAlign: "left",
-            tableFontFamily: "Comic Sans MS",
-            spacingBefor: 120, 
-            spacingAfter: 120, 
+            tableColWidth: 500,
+            tableSize: 300,
+            tableColor: "black",
+            tableAlign: "center",
             spacingLine: 240, 
             spacingLineRule: 'atLeast', 
             indent: 100, 
-            fixedLayout: true,
             borders: true, 
             borderSize: 2, 
-            columns: [{ width: 10 }, { width: 1 }, { width: 10 }], 
+            columns: [{ width: 200 }, { width: 200 }, { width:200 }], 
           }
           documento.createTable (table, tableStyle); 
         

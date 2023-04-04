@@ -50,8 +50,17 @@ class Home {
       });
     };
   }
+  // Renderização de geneciador de modelos 
+  meusmodelos(){
+    return (req,res)=>{
+       res.render("gerenciador",{title:"Meus Modelos",style:"meusmodelos.css"})
+    }
+  }
 
-  // controller de criar documento
+
+
+ // controller de criar documento
+
   criarmodelo1() {
     return (req, res) => {
 

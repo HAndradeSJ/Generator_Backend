@@ -66,7 +66,7 @@ class documentosRepository {
         try {
           this.db.query(
             `INSERT INTO documentos (num_doc, tipo_doc, data_hora, usuario, descricao) values (?,?,?,?,?)`,
-            [data.numero, "Modelo 2", new Date(), data.usuario, data.desc],
+            [data.numero, "Modelo 2", new Date(), data.usuario, data.texts],
             // Acusando o erro
             async (error, response) => {
               if (error) return reject(error);
@@ -85,7 +85,7 @@ class documentosRepository {
         try {
           this.db.query(
             `INSERT INTO documentos (num_doc, tipo_doc, data_hora, usuario, descricao) values (?,?,?,?,?)`,
-            [data.numero, "Modelo 3", new Date(), data.usuario, data.desc],
+            [data.numero, "Modelo 3", new Date(), data.usuario, data.texts],
             // Acusando o erro
             async (error, response) => {
               if (error) return reject(error);
