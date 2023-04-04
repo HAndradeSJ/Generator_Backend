@@ -23,12 +23,12 @@ app.engine( 'hbs', exphbs.engine({
     
 }));
 
+// Definindo pasta de arquivo estaticos 
 app.use('/assets', express.static(__dirname +'/assets'));
 
 
 //  Rota padrão 
 app.use('/', require('./routes/home'));
-app.use('/formulario',require('./routes/home'))
 
 
 
