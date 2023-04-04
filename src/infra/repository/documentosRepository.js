@@ -97,14 +97,27 @@ class documentosRepository {
         }
         
         
-      })
-       
+      }) 
     }
-      
-    
-    
-    
-  
+    // Listando todos os documentos do banco de dadow
+    listall() {
+      return new Promise(async (resolve, reject) => {
+        try {
+          this.db.query(
+            `SELECT * FROM documentos `,
+            [],
+            async (error, response) => {
+              if (error) return reject(new Error(error));
+              response.forEach(async () => {
+                return resolve({ documentos: response });
+              });
+            }
+          );
+        } catch (error) {
+          return reject(new Error(error));
+        }
+      });
+    }
 }
 // exportação do repository
 module.exports = documentosRepository;
