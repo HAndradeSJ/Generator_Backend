@@ -55,9 +55,7 @@ class Home {
   // Renderização de geneciador de modelos 
   meusmodelos(){
     return (req,res)=>{
-       documentosRepository.listall().then((response) => {
-       res.render("gerenciador",{title:"Meus Modelos",style:"meusmodelos.css",documento:response})
-       })
+       documentosRepository.listall()
     }
   }
 
